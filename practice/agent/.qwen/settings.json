@@ -3,9 +3,9 @@
   "modelProviders": {
     "openai": [
       {
-        "id": "<model_name>",
-        "name": "<model_name>",
-        "baseUrl": "<model_url>",
+        "id": "agentic/gc_v3",
+        "name": "agentic/gc_v3",
+        "baseUrl": "https://llmhub.sberai-rnd.ru/v1",
         "envKey": "MODEL_API_KEY",
         "generationConfig": {
           "samplingParams": {
@@ -23,8 +23,8 @@
     }
   },
   "model": {
-    "name": "<model_name>",
-    "baseUrl": "<model_url>"
+    "name": "agentic/gc_v3",
+    "baseUrl": "https://llmhub.sberai-rnd.ru/v1"
   },
   "context": {
     "fileName": ["QWEN.md"]
@@ -35,13 +35,22 @@
   },
     "mcpServers": {
     "todo": {
-      "command": "/env/path/to/python",
-      "args": ["/path/to/mcp/server.py"],
+      "command": "C:/Users/1/miniconda3/envs/aidd-mcp/python.exe",
+      "args": ["D:/Vibecode/aidd_4/practice/mcp/server.py"],
       "env": { "TODO_API_URL": "http://127.0.0.1:<app_port>" }
     },
     "excel": {
       "command": "uvx",
       "args": ["excel-mcp-server", "stdio"]
     }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__excel__set_sheet_layout",
+      "mcp__excel__describe_workbook",
+      "Read(D:\\Vibecode\\aidd_4\\apps/**)",
+      "mcp__excel__create_workbook",
+      "Bash(python *)"
+    ]
   }
 }

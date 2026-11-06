@@ -26,6 +26,16 @@
     "name": "agentic/gc_v3",
     "baseUrl": "https://llmhub.sberai-rnd.ru/v1"
   },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^run_shell_command$",
+        "hooks": [
+          { "type": "command", "command": "python D:/Vibecode/aidd_4/practice/agent/.qwen/hooks/guard.py", "timeout": 10 }
+        ]
+      }
+    ]
+  },
   "context": {
     "fileName": ["QWEN.md"]
   },
@@ -37,7 +47,7 @@
     "todo": {
       "command": "C:/Users/1/miniconda3/envs/aidd-mcp/python.exe",
       "args": ["D:/Vibecode/aidd_4/practice/mcp/server.py"],
-      "env": { "TODO_API_URL": "http://127.0.0.1:<app_port>" }
+      "env": { "TODO_API_URL": "http://127.0.0.1:5000" }
     },
     "excel": {
       "command": "uvx",
